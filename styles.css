@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
+}
+
+header img {
+    height: 100px;
+    width: auto;
+}
+
+header button {
+    background-color: #0B5ED7; /* azul elegante */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer; /*hace que el cursor sea una mano cuando se pasa el raton*/
+    transition: all 0.3s ease;
+}
+
+header button:hover {
+    background-color: #084298; /* azul más oscuro al pasar el ratón */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.banner {
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    margin-top: 0;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.banner-text {
+    position: absolute;
+    top: 65%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: left;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+.banner-text p {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+
+.about-us h2{
+    padding: 60px 20px 10px;
+    text-align: center;
+    font-size: 30px;
+    color: #07156b;
+}
+
+.about-us p{
+    padding: 0 20px 40px 20px; /*El orden del padding es top, right, bottom left*/
+    text-align: center;
+    font-size: 18px;
+    color: #333333;
+    line-height: 1.6;
+    font-size: 20px;
+}
+
+.services {
+    background-color: #f9f9f9;
+    padding: 25px;                   /* 🔹 Margen interno (espacio dentro de la tarjeta) */
+    margin: 15px;                    /* 🔹 Espacio entre tarjetas */
+    text-align: center;   
+}
+
+#services-title{
+    padding: 60px 20px 10px;
+    text-align: center;
+    font-size: 30px;
+    color: #07156b;
+    margin-bottom: 40px
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    width: min(1200px, 100%);
+    /*height: min(1000px);*/
+    margin: 0 auto;;
+}
+
+.service-card {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 250ms ease, box-shadow 250ms ease;
+    transform-origin: center;
+    cursor: default;
+    padding: 20px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 8px;
+    outline: none;
+}
+
+.service-card.is-hovered {
+    transform: scale(1.04);
+    box-shadow: 0 10px 28px rgba(10,10,30,0.12);
+    z-index: 10; /* evita que sea 'tapado' por tarjetas vecinas */
+}
+
+/* Accesibilidad: borde visible al enfocar con teclado */
+.service-card:focus-visible {
+    box-shadow: 0 10px 28px rgba(10,10,30,0.12), 0 0 0 4px rgba(11,94,215,0.12);
+}
+
+
+.service-card h3 {
+    font-size: 20px;
+    color: #07156b;
+    
+}
+
+.service-card p {
+    font-size: 25px;
+    color: #444;
+    line-height: 1.4;
+}
+
+
+@media (max-width: 900px) {
+    .services-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .banner { height: 420px; }
+    .banner-text p { font-size: 32px; left: 10%; }
+    .services-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: #000000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
+}
+
+footer img {
+    height: 200px;
+    width: auto;
+}
+
+footer p {
+    color: white;
+    font-size: 14px;
+}
+.footer-logos {
+    display: flex;
+    justify-content: space-between;
+}
+.footer-text {
+    display: block;
+}
